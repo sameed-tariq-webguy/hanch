@@ -1,0 +1,30 @@
+/* FOOTER */
+
+.site-footer-disclaimer-container {
+    display: flex;
+    background-color: #222;
+    width: 100%;
+    justify-content: center;
+}
+
+.site-footer-disclaimer {
+    position: relative;
+    color: #444;
+    padding: 50px 25px 25px 25px;
+    font-size: .75rem;
+    max-width: 1000px;
+}
+
+.kilroy {
+    position: absolute;
+    background-image: url('../../assets/images/kilroy.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 80px;
+    width: 150px;
+    top: -40px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    z-index: 0;
+}
