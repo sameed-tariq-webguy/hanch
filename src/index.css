@@ -1,18 +1,16 @@
 @font-face {
   font-family: 'Arial Narrow';
   src: 
-  url('assets/fonts/ArialNarrow.woff2') format('woff2'), /* Modern Browsers */
-  url('assets/fonts/ArialNarrow.html') format('woff'), /* Older Browsers */
-  url('assets/fonts/ArialNarrow.ttf') format('truetype'); /* Oldest Browsers */
+    url('./assets/fonts/ArialNarrow.woff2') format('woff2'), /* Modern Browsers */
+    url('./assets/fonts/ArialNarrow.ttf') format('truetype'); /* Oldest Browsers */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Arial Narrow';
   src: 
-  url('assets/fonts/ArialNarrowBold.html') format('woff2'), /* Modern Browsers */
-  url('assets/fonts/ArialNarrowBold.woff') format('woff'), /* Older Browsers */
-  url('assets/fonts/ArialNarrowBold.ttf') format('truetype'); /* Oldest Browsers */
+    url('./assets/fonts/ArialNarrowBold.woff') format('woff'), /* Older Browsers */
+    url('./assets/fonts/ArialNarrowBold.ttf') format('truetype'); /* Oldest Browsers */
   font-style: normal;
   font-weight: bold;
 }
@@ -20,20 +18,21 @@
 @font-face {
   font-family: 'EBMedium';
   src: 
-  url('assets/fonts/EBMedium.woff2') format('woff2'), /* Modern Browsers */
-  url('assets/fonts/EBMedium.woff') format('woff'), /* Older Browsers */
-  url('assets/fonts/EBMedium.ttf') format('truetype'); /* Oldest Browsers */
+    url('./assets/fonts/EBMedium.woff2') format('woff2'), /* Modern Browsers */
+    url('./assets/fonts/EBMedium.woff') format('woff'), /* Older Browsers */
+    url('./assets/fonts/EBMedium.ttf') format('truetype'); /* Oldest Browsers */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'EBRegular';
   src: 
-  url('../fonts/EBRegular.woff2') format('woff2'), /* Modern Browsers */
-  url('../fonts/EBRegular.woff') format('woff'), /* Older Browsers */
-  url('../fonts/EBRegular.ttf') format('truetype'); /* Oldest Browsers */
+    url('./assets/fonts/EBRegular.woff2') format('woff2'), /* Modern Browsers */
+    url('./assets/fonts/EBRegular.woff') format('woff'), /* Older Browsers */
+    url('./assets/fonts/EBRegular.ttf') format('truetype'); /* Oldest Browsers */
   font-style: normal;
 }
+
 
 ::-webkit-scrollbar {
   height: 12px;
@@ -105,4 +104,12 @@ a:hover {
   100% {
       background-position: 0 0;
   }
+}
+
+.swiper-pagination-bullet{
+  background: black;
+}
+
+.swiper-pagination-bullet-active{
+  background: #cecece;
 }

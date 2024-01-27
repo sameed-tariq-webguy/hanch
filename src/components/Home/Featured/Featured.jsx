@@ -1,58 +1,27 @@
-
-import { useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Featured.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination , Navigation, Autoplay, Thumbs } from 'swiper/modules';
+import 'swiper/css/bundle';
+import 'swiper/css/thumbs';
 
 const Featured = () => {
 
-    useEffect(() => {
-        // Initialize featuredSwiper
-        const featuredSwiper = new Swiper('.featuredSwiper', {
-          direction: 'horizontal',
-          loop: true,
-          speed: 500,
-          slidesPerView: 1,
-          autoplay: {
-            delay: 6000,
-          },
-          mousewheelControl: true,
-          mousewheel: {
-            forceToAxis: true,
-            thresholdDelta: 30,
-            thresholdTime: 500,
-          },
-          centeredSlides: true,
-          spaceBetween: 200,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-        });
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+    const backgroundSwiperParams = {
+      autoplay: { delay: 5000, disableOnInteraction: false },
+    };
+
+    const thumbnailSwiperParams = {
+      centeredSlides: true,
+      autoplay: { delay: 5000, disableOnInteraction: false },
+      pagination: { clickable: true },
+      navigation: { prevEl: '.featured-btn-prev', nextEl: '.featured-btn-next' },
+      modules: [Autoplay, Navigation, Pagination, Thumbs]
+    };
     
-        // Initialize featuredBackgroundSwiper
-        const featuredBackgroundSwiper = new Swiper('.featuredBackgroundSwiper', {
-          direction: 'vertical',
-          loop: true,
-          speed: 500,
-          slidesPerView: 1,
-          centeredSlides: true,
-          spaceBetween: 0,
-          allowTouchMove: false,
-        });
-    
-        // Connect the Swiper instances
-        featuredSwiper.controller.control = featuredBackgroundSwiper;
-        featuredBackgroundSwiper.controller.control = featuredSwiper;
-    
-        // Clean up the Swiper instances on component unmount
-        return () => {
-          featuredSwiper.destroy();
-          featuredBackgroundSwiper.destroy();
-        };
-      }, []); // Run the effect only once on component mount
+
   return (
     <>
       <div className="section-container-featured">
@@ -63,53 +32,54 @@ const Featured = () => {
             <div className="section-featured-backgroundswipe-container">
               <div className="section-featured-image-perspective">
                 <div className="swiper featuredBackgroundSwiper">
-                  <div className="swiper-wrapper">
-                    <div className="swiper-slide">
-                      <div className="section-featured-image1">1</div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="section-featured-image2">2</div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="section-featured-image3">3</div>
-                    </div>
-                  </div>
+                    <Swiper className="swiper-wrapper" {...backgroundSwiperParams} centeredSlides= {true} direction={'vertical'} modules= {[Autoplay, Thumbs]}>
+                      <SwiperSlide>
+                        <div className="section-featured-image1">1</div>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <div className="section-featured-image3">3</div>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <div className="section-featured-image2">2</div>
+                      </SwiperSlide>
+                    </Swiper>
                 </div>
               </div>
             </div>
             <div className="section-title-featured">FEATURED</div>
-            <div className="swiper-button-prev">
+            <div className="swiper-button-prev featured-btn-prev">
               <div className="featured-button">
                 <i className="fa fa-caret-left"></i>
               </div>
             </div>
-            <div className="swiper-button-next">
+            <div className="swiper-button-next featured-btn-next">
               <div className="featured-button">
                 <i className="fa fa-caret-right"></i>
               </div>
             </div>
-            <div className="swiper-wrapper">
-              <div className="swiper-slide">
+            
+            <Swiper className="swiper-wrapper" {...thumbnailSwiperParams}>
+              <SwiperSlide>
                 <div className="feature-card">
                   <div className="feature-card-content">New single "Fluffy"!</div>
                 </div>
-              </div>
-              <div className="swiper-slide">
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="feature-card">
+                  <div className="feature-card-content">Old underwear giveaway!</div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
                 <div className="feature-card">
                   <div className="feature-card-content">The Lion King</div>
                 </div>
+              </SwiperSlide>
+              <div className="section-footer-featured">
+                <div className="swiper-pagination"></div>
               </div>
-              <div className="swiper-slide">
-                <div className="feature-card">
-                  <div className="feature-card-content">
-                    Old underwear giveaway!
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="section-footer-featured">
-              <div className="swiper-pagination"></div>
-            </div>
+            </Swiper>
+
+            
           </div>
         </div>
       </div>

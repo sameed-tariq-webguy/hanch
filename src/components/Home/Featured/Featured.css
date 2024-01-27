@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     background-color: #ffd900;
-    background-image: url('../../../assets/images/tile-stars.png');
+    background-image: url('@/assets/images/tile-stars.png');
     background-repeat: repeat;
     background-size: 30rem;
     width: 100%;
@@ -80,7 +80,7 @@
 .feature-side-pic
 {
     position: absolute;
-    background-image: url('../../../assets/images/sidepic.png');
+    background-image: url('@/assets/images/sidepic.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
