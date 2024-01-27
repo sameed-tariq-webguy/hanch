@@ -1,21 +1,19 @@
 
 import './SoapBox.css'
-import { useEffect , useState } from 'react';
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination , Navigation, Autoplay } from 'swiper/modules';
+import { Pagination , Navigation, Autoplay, Controller, EffectFade } from 'swiper/modules';
 
 
 const SoapBox = () => {
-
-    
-    
+    const [controlledSwiper, setControlledSwiper] = useState(null);
   return (
     <>
         <div className="section-container-whatsup">
             <div className="widescreen-gradient"></div>
             <div className="section-background-container">
                 <div className="swiper sectionBackgroundSwiper">
-                <Swiper className="swiper-wrapper" centeredSlides={true} autoplay={{ delay: 5000, disableOnInteraction: false, }} modules={[Autoplay]} >
+                <Swiper className="swiper-wrapper" centeredSlides={true} modules={[Controller, EffectFade]} onSwiper={setControlledSwiper} >
                     <SwiperSlide className="swiper-slide">
                         <div className="section-background-soapbox"></div>
                     </SwiperSlide>
@@ -45,7 +43,7 @@ const SoapBox = () => {
                         <div className="postcard-button"><i className="fa fa-caret-right"></i></div>
                     </div>
                     <div className="carousel-edge-fade"></div>
-                    <Swiper className="swiper-wrapper mySwiper" centeredSlides={true} autoplay={{ delay: 5000, disableOnInteraction: false, }} pagination={{ clickable: true, }} navigation={{ prevEl: '.hero-btn-prev', nextEl: '.hero-btn-next' }} modules={[Autoplay , Navigation, Pagination]} >
+                    <Swiper className="swiper-wrapper mySwiper" centeredSlides={true} autoplay={{ delay: 5000, disableOnInteraction: false, }} pagination={{ clickable: true, }} navigation={{ prevEl: '.hero-btn-prev', nextEl: '.hero-btn-next' }} modules={[Autoplay , Navigation, Pagination, Controller]} controller={{ control: controlledSwiper }} >
                         <SwiperSlide className='swiper-slide'>
                             <div className="postcard-soapbox">
                                 <div className="postcard-spacer-height"></div>

@@ -1,26 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Featured.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination , Navigation, Autoplay, Thumbs } from 'swiper/modules';
+import { Pagination , Navigation, Autoplay, Thumbs, Controller } from 'swiper/modules';
 import 'swiper/css/bundle';
 import 'swiper/css/thumbs';
 
 const Featured = () => {
 
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [controlledSwiper, setControlledSwiper] = useState(null);
 
-    const backgroundSwiperParams = {
-      autoplay: { delay: 5000, disableOnInteraction: false },
-    };
-
-    const thumbnailSwiperParams = {
-      centeredSlides: true,
-      autoplay: { delay: 5000, disableOnInteraction: false },
-      pagination: { clickable: true },
-      navigation: { prevEl: '.featured-btn-prev', nextEl: '.featured-btn-next' },
-      modules: [Autoplay, Navigation, Pagination, Thumbs]
-    };
-    
 
   return (
     <>
@@ -32,7 +20,12 @@ const Featured = () => {
             <div className="section-featured-backgroundswipe-container">
               <div className="section-featured-image-perspective">
                 <div className="swiper featuredBackgroundSwiper">
-                    <Swiper className="swiper-wrapper" {...backgroundSwiperParams} centeredSlides= {true} direction={'vertical'} modules= {[Autoplay, Thumbs]}>
+                <Swiper
+                  className="swiper featuredBackgroundSwiper"
+                  direction={'vertical'}
+                  modules={[Autoplay, Controller]}
+                  onSwiper={setControlledSwiper}
+                >
                       <SwiperSlide>
                         <div className="section-featured-image1">1</div>
                       </SwiperSlide>
@@ -57,8 +50,17 @@ const Featured = () => {
                 <i className="fa fa-caret-right"></i>
               </div>
             </div>
-            
-            <Swiper className="swiper-wrapper" {...thumbnailSwiperParams}>
+
+              <Swiper
+                className="swiper featuredThumbsSwiper"
+                modules={[Autoplay, Navigation, Pagination, Controller]}
+                controller={{ control: controlledSwiper }}
+                pagination={{ clickable: true }}
+                navigation={{ prevEl: '.featured-btn-prev', nextEl: '.featured-btn-next' }}
+                centeredSlides={true}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                onSlideChange={(swiper) => onChange(swiper)}
+              >            
               <SwiperSlide>
                 <div className="feature-card">
                   <div className="feature-card-content">New single "Fluffy"!</div>
