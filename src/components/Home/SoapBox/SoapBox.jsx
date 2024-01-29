@@ -43,7 +43,7 @@ const SoapBox = () => {
                         <div className="postcard-button"><i className="fa fa-caret-right"></i></div>
                     </div>
                     <div className="carousel-edge-fade"></div>
-                    <Swiper className="swiper-wrapper mySwiper" centeredSlides={true} pagination={{ el: '.swiper-pagination', clickable: true }} navigation={{ prevEl: '.hero-btn-prev', nextEl: '.hero-btn-next' }} modules={[Navigation, Pagination, Controller]} controller={{ control: controlledSwiper }} slidesPerView={1} spaceBetween={20} >
+                    <Swiper className="swiper-wrapper mySwiper" centeredSlides={true} pagination={{ el: '.swiper-pagination', clickable: true }} navigation={{ prevEl: '.hero-btn-prev', nextEl: '.hero-btn-next' }} modules={[Navigation, Pagination, Controller]} controller={{ control: controlledSwiper }} slidesPerView={1.1} spaceBetween={'8px'}>
                         <SwiperSlide className='swiper-slide'>
                             <div className="postcard-soapbox">
                                 <div className="postcard-spacer-height"></div>
