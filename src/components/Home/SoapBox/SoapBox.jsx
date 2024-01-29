@@ -13,7 +13,7 @@ const SoapBox = () => {
             <div className="widescreen-gradient"></div>
             <div className="section-background-container">
                 <div className="swiper sectionBackgroundSwiper">
-                <Swiper className="swiper-wrapper" centeredSlides={true} modules={[Controller, EffectFade]} onSwiper={setControlledSwiper} >
+                <Swiper className="swiper-wrapper" centeredSlides={true} effect="fade"  modules={[Controller, EffectFade]} onSwiper={setControlledSwiper} >
                     <SwiperSlide className="swiper-slide">
                         <div className="section-background-soapbox"></div>
                     </SwiperSlide>
@@ -43,7 +43,7 @@ const SoapBox = () => {
                         <div className="postcard-button"><i className="fa fa-caret-right"></i></div>
                     </div>
                     <div className="carousel-edge-fade"></div>
-                    <Swiper className="swiper-wrapper mySwiper" centeredSlides={true} autoplay={{ delay: 5000, disableOnInteraction: false, }} pagination={{ clickable: true, }} navigation={{ prevEl: '.hero-btn-prev', nextEl: '.hero-btn-next' }} modules={[Autoplay , Navigation, Pagination, Controller]} controller={{ control: controlledSwiper }} >
+                    <Swiper className="swiper-wrapper mySwiper" centeredSlides={true} pagination={{ el: '.swiper-pagination', clickable: true }} navigation={{ prevEl: '.hero-btn-prev', nextEl: '.hero-btn-next' }} modules={[Navigation, Pagination, Controller]} controller={{ control: controlledSwiper }} slidesPerView={1} spaceBetween={20} >
                         <SwiperSlide className='swiper-slide'>
                             <div className="postcard-soapbox">
                                 <div className="postcard-spacer-height"></div>
@@ -57,8 +57,7 @@ const SoapBox = () => {
                         <SwiperSlide className='swiper-slide'>
                             <div className="postcard-learn">
                                 <div className="postcard-spacer-height"></div>
-                                <div className="postcard-title-learn">Let's Learn About Music.
-                                </div>
+                                <div className="postcard-title-learn">Let's Learn About Music.</div>
                             </div>
                             <div className="postcard-info">
                                 <span className="postcard-date">Thu, Dec 14</span><span className="postcard-tag">fun</span><span

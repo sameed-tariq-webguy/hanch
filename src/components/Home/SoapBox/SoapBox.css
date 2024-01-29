@@ -129,8 +129,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: #333;
-    aspect-ratio: 16 / 9;
-    width: 100%;
+    height: 200px;
     max-width: 600px;
     align-items: center;
     border-radius: 15px;
@@ -148,7 +147,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: #333;
-    aspect-ratio: 16 / 9;
+    height: 200px;
     width: 100%;
     max-width: 600px;
     align-items: center;
@@ -167,7 +166,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: #333;
-    aspect-ratio: 16 / 9;
+    height: 200px;
     width: 100%;
     max-width: 600px;
     align-items: center;
@@ -186,7 +185,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: #333;
-    aspect-ratio: 16 / 9;
+    height: 200px;
     width: 100%;
     max-width: 600px;
     align-items: center;
@@ -205,8 +204,8 @@
     flex-direction: column;
     justify-content: center;
     background-color: #333;
-    aspect-ratio: 16 / 9;
     width: 100%;
+    height: 200px;
     max-width: 600px;
     align-items: center;
     border-radius: 15px;
@@ -349,8 +348,7 @@
     position: absolute;
     width: 100%;
     max-height: 600px;
-    height: 100%;
-    aspect-ratio: 16 / 9;
+    height: 400px;
     z-index: 0;
 }
 
@@ -364,7 +362,7 @@
     background-repeat: repeat;
     background-size: 20rem;
     width: 100%;
-    height: 100%;
+    height: 400px;
 }
 
 .section-background-live {
@@ -373,7 +371,7 @@
     background-repeat: repeat;
     background-size: 15rem;
     width: 100%;
-    height: 100%;
+    height: 400px;
 }
 
 .section-background-music {
@@ -382,7 +380,7 @@
     background-repeat: repeat;
     background-size: 30rem;
     width: 100%;
-    height: 100%;
+    height: 400px;
 }
 
 .section-background-learn {
@@ -391,7 +389,7 @@
     background-repeat: repeat;
     background-size: 20rem;
     width: 100%;
-    height: 100%;
+    height: 400px;
 }
 
 .section-background-discover {
@@ -404,5 +402,35 @@
     height: 100%;
 }
 
+
+@media screen and (min-width: 1024px) {
+    .postcard-soapbox, .postcard-live, .postcard-music, .postcard-learn, .postcard-discover,
+    .section-background-soapbox, .section-background-live, .section-background-music, .section-background-discover
+    {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        height: 100% !important;
+    }
+    .section-background-learn
+    {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        height: 100% !important;
+    }
+
+    .section-background-container{
+        max-height: 800px;
+        aspect-ratio: 16 / 9;
+        height: 100%;
+    }
+}
+
+.swiper-pagination .swiper-pagination-bullet{
+    background: black !important;
+  }
+  
+  .swiper-pagination .swiper-pagination-bullet-active{
+    background: white !important;
+  }
 
 

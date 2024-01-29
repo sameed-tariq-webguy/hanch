@@ -183,3 +183,11 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+.swiper-pagination .swiper-pagination-bullet{
+    background: black !important;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active{
+    background: white !important;
+}

@@ -106,10 +106,3 @@ a:hover {
   }
 }
 
-.swiper-pagination-bullet{
-  background: black;
-}
-
-.swiper-pagination-bullet-active{
-  background: #cecece;
-}

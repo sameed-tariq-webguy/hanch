@@ -25,6 +25,7 @@ const Featured = () => {
                   direction={'vertical'}
                   modules={[Autoplay, Controller]}
                   onSwiper={setControlledSwiper}
+                  
                 >
                       <SwiperSlide>
                         <div className="section-featured-image1">1</div>
@@ -55,7 +56,7 @@ const Featured = () => {
                 className="swiper featuredThumbsSwiper"
                 modules={[Autoplay, Navigation, Pagination, Controller]}
                 controller={{ control: controlledSwiper }}
-                pagination={{ clickable: true }}
+                pagination={{ el: '.swiper-pagination', clickable: true }}
                 navigation={{ prevEl: '.featured-btn-prev', nextEl: '.featured-btn-next' }}
                 centeredSlides={true}
                 autoplay={{ delay: 4000, disableOnInteraction: false }}
